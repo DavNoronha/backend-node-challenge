@@ -1,3 +1,4 @@
+import { FastifyError, FastifyReply, FastifyRequest } from "fastify"
 import Fastify from "fastify"
 import cors from "@fastify/cors"
 
@@ -13,6 +14,13 @@ app.addContentTypeParser("application/json", { parseAs: "buffer" }, function (re
   } catch (err) {
     done(err as Error, undefined)
   }
+})
+
+app.setErrorHandler((error: FastifyError, request: FastifyRequest, reply: FastifyReply) => {
+  const statusCode = error.statusCode && error.statusCode >= 400 ? error.statusCode : 500
+  reply.status(statusCode).send({
+    error: error.message || "Internal server error"
+  })
 })
 
 const port = +process.env.PORT! || 3002
