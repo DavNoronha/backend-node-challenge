@@ -1,6 +1,6 @@
 # Gift cards checkout backend
 
-## In order to test this app you'll have to:
+## In order to test this app you need to:
 ### - Create .env file with:
   PORT=3001
 
