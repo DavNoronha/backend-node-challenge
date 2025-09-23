@@ -32,7 +32,7 @@ class WebhookService {
         }
 
         const shareLink = session.metadata?.purchaseFor === "gift"
-          ? `${process.env.FRONTEND_URL}/gift/${orderId}`
+          ? `${process.env.FRONTEND_URL}/your-gift?id=${orderId}`
           : undefined
 
         const updatedOrder = await prisma.order.update({

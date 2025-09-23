@@ -52,7 +52,7 @@ class CreateOrderService {
         purchaseFor: order.purchaseFor,
         recipientEmail: order.recipientEmail
       },
-      success_url: `${process.env.FRONTEND_URL}/success/${order.id}`,
+      success_url: `${process.env.FRONTEND_URL}/my-orders?id=${order.id}`,
       cancel_url: `${process.env.FRONTEND_URL}/cancel`,
     })
 
