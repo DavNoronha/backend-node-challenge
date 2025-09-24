@@ -51,7 +51,7 @@ export async function createOrderService({ purchaseFor, recipientEmail, message,
       purchaseFor: order.purchaseFor,
       recipientEmail: order.recipientEmail
     },
-    success_url: `${process.env.FRONTEND_URL}/my-orders?id=${order.id}`,
+    success_url: `${process.env.FRONTEND_URL}/my-orders/${order.id}`,
     cancel_url: `${process.env.FRONTEND_URL}/cancel`,
   })
 

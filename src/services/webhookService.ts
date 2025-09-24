@@ -31,7 +31,7 @@ export async function webhookService(event: Stripe.Event) {
       }
 
       const shareLink = session.metadata?.purchaseFor === "gift"
-        ? `${process.env.FRONTEND_URL}/your-gift?id=${orderId}`
+        ? `${process.env.FRONTEND_URL}/your-gift/${orderId}`
         : undefined
 
       const updatedOrder = await prisma.order.update({
