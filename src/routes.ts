@@ -6,8 +6,6 @@ import { webhookController } from "./controllers/webhookController.js"
 
 export async function routes(fastify: FastifyInstance, options: FastifyPluginOptions) {
 
-
-
  fastify.get("/order/:id", getOrderController)
 
  fastify.post("/order", createOrderController)
