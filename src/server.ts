@@ -30,7 +30,7 @@ const start = async () => {
   await app.register(routes)
 
   try {
-    await app.listen({ port })
+  await app.listen({ port, host: "0.0.0.0" })
   } catch (err) {
     console.log("SERVER: ",err)
     process.exit(1)
